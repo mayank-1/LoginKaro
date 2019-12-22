@@ -1,0 +1,38 @@
+<div class="container my-5">
+    <div class="row">
+        {{#if error}}
+        <div class="alert mx-auto col-md-6 mt-1 alert-{{error.alertType}} alert-dismissible shadow fade show"
+            role="alert">
+            {{error.alertMessage}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {{/if}}
+    </div>
+    <div class="row">
+        <div class="card shadow p-3 mb-5 bg-white rounded mx-auto my-auto justify-content col-md-6">
+            <div class="title mx-auto">
+                <h2>{{title}}</h2>
+            </div>
+            <div class="form">
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="submit d-flex justify-content-center">
+                        <button type="submit" class="btn btn-info text-black">LOGIN</button>
+                    </div>
+                </form>
+                <div class="new-user mt-1 d-flex justify-content-center">
+                    <a href="/register" style="text-decoration: none;">New User? Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

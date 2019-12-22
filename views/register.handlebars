@@ -1,0 +1,46 @@
+<div class="container my-5">
+    <div class="row">
+        {{#if data}}
+        <div class="alert mx-auto col-md-6 mt-1 alert-{{data.alertType}} shadow alert-dismissible fade show"
+            role="alert">
+            {{data.alertMessage}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {{/if}}
+    </div>
+    <div class="row">
+        <div class="card shadow p-3 mb-5 bg-white rounded mx-auto col-md-6">
+            <div class="title mx-auto">
+                <h2>{{title}}</h2>
+            </div>
+            <div class="form">
+                <form action="/register" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpassword">Confirm Password</label>
+                        <input type="password" name="cpassword" class="form-control" required>
+                    </div>
+                    <div class="submit d-flex justify-content-center">
+                        <button type="submit" class="btn btn-info text-black">REGISTER</button>
+                    </div>
+                </form>
+                <div class="new-user d-flex justify-content-center mx-auto mt-1">
+                    <a href="/login" style="text-decoration: none;">Already have an Account? Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
